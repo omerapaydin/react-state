@@ -1,14 +1,22 @@
 import { sculptureList } from "./data/sculptureList";
 
 function App() {
-  let index = 0;
+  const [index, setIndex] = useState(0);
   let sculpture = sculptureList[index];
 
   function handlePreviousClick() {
-    console.log("Geri clicked");
+    if (index > 0) {
+      setIndex(index - 1);
+    } else {
+      setIndex(sculptureList.length - 1);
+    }
   }
   function handleNextClick() {
-    console.log("İleri clicked");
+    if (index < sculptureList.length - 1) {
+      setIndex(index + 1);
+    } else {
+      setIndex(0);
+    }
   }
   return (
     <>

@@ -1,7 +1,9 @@
-import { sculptureList } from "./data/sculptureList";
-
+import { useState } from "react";
+import { sculptureList } from "./data/sculptureList.js";
 function App() {
   const [index, setIndex] = useState(0);
+  const [showMore, setShowMore] = useState(false);
+
   let sculpture = sculptureList[index];
 
   function handlePreviousClick() {

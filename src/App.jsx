@@ -34,7 +34,11 @@ function App() {
         ({index + 1} of {sculptureList.length})
       </h3>
       <img src={sculpture.url} alt={sculpture.alt}></img>
-      <p>{sculpture.description}</p>
+
+      <p>
+        <button onClick={() => setShowMore(!showMore)}>Hide/Show</button>
+      </p>
+      {showMore && <p>{sculpture.description}</p>}
     </>
   );
 }
